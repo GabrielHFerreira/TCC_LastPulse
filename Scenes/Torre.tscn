@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://v0nceugedb6y"]
+
+[ext_resource type="Script" uid="uid://dyk7djtv87dcl" path="res://Scripts/torre.gd" id="1_4cbpi"]
+[ext_resource type="Texture2D" uid="uid://cmt5k5667g0dt" path="res://Assets/Torre_Teste.png" id="1_6005t"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4cbpi"]
+radius = 17.0
+height = 34.0
+
+[node name="Area2D" type="Area2D" unique_id=1908388991]
+script = ExtResource("1_4cbpi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=823058637]
+texture = ExtResource("1_6005t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1750258512]
+shape = SubResource("CapsuleShape2D_4cbpi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
